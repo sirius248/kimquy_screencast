@@ -1,0 +1,9 @@
+<ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+         <li><%= link_to current_user.email %></li>
+         <li><%= link_to "Thoát", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+       <li><%= link_to "Đăng Ký", new_user_registration_path %> </li>
+         <li><%= link_to "Đăng Nhập", new_user_session_path %></li>
+    <% end %>
+</ul>
