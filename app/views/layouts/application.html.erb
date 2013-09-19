@@ -46,15 +46,40 @@
   <br/>
   <br/>
 
-  <div class="container">
+  <% if request.fullpath == "/" %>
+    <div class="jumbotron">
+       <div class="container">
+           <h1>Xin Chào Các Geek IT</h1>
+           <p>
+             GikTuts muốn chia sẻ những kiến thức và mẹo vặt về lập trình, Unix, và những công nghệ mới liên quan đến công nghệ thông tin bằng những video ngắn gọn trừng 5 tới 10 phút. 
+           </p>
+           <p><a href="/library" class="btn btn-primary btn-lg">Checkout Videos</a>
+       </div>
+    </div>
+  <% end %>
 
+  <div class="container">
     <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
 
     <%= yield %>
+
+    <hr/>
+    <footer>
+      <p>@GikTuts 2013</p>
+    </footer>
   </div>
 
+
+  <% if Rails.env == "development1" %>
+    <br/>
+    <br/>
+    <br/>
+    <%= debug params %>
+  <% end %>
+  
+  
 </body>
 </html>
 
