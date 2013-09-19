@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+gem 'awesome_print'
 gem 'devise'
 gem 'puma'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
