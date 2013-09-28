@@ -29,10 +29,10 @@
         </ul>
 
         <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="what're you looking for">
+          <div class="form-group" id="search_container">
+            <input type="text" class="form-control search_text" placeholder="tìm video">
+            <input type="submit" name="submit" class="search_submit" value>
           </div>
-          <button type="submit" class="btn btn-success">Tìm Tuts</button>
         </form>
 
         <%= render 'layouts/login' %>
