@@ -6,10 +6,6 @@ class MainController < ApplicationController
     
   end
 
-  def about
-    
-  end
-
   def donggop
     
   end
