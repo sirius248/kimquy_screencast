@@ -19,6 +19,12 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                                 :github => 'anjlab/bootstrap-rails'
 
 
+gem 'mail_form'
+
+group :development do
+	gem 'pry'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

@@ -7,7 +7,7 @@ class MainController < ApplicationController
   end
 
   def donggop
-    
+   	@feedback = ContactForm.new 
   end
 
   def library
