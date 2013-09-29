@@ -33,7 +33,8 @@
 }
 
 h2, h3{
-  font: 300 30px/1.3 'Bree Serif', Georgia, serif;
+  font: 300 22px/1.3 'Bree Serif', Georgia, serif;
+  font-weight: bold;
 }
 
 h4{
