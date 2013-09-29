@@ -140,5 +140,19 @@ a, a:hover{
   padding-top: 4px;
 }
 
+#footer{
+  height: 60px;
+  background-color: #F8F8F8;
+  border: 1px solid #F8F8F8;
+}
+.footer_stuff{
+  float: left;
+  line-height: 60px;
+}
+.social{
+  float: right;
+  line-height: 60px;
+}
+
 
 
