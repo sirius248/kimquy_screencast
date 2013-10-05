@@ -3,7 +3,7 @@ class NotificationsMailer < ActionMailer::Base
   default to: "khanhpn@zigexn.vn"
 
   def new_message(message)
-    @message sage
-    mail(subject: )
+    @message =  message
+    mail(subject: "[GitTuts] #{message.subject}")
   end
 end

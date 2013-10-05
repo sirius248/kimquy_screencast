@@ -5,5 +5,8 @@ KimquyScreencast::Application.routes.draw do
   get "/donggop" => "main#donggop"
   get "/library" => "main#library"
 
-  match "contact" => "contact#new", as: "contact", via: :get
+  get "/contact" => "contact#new", via: :get
+  get "/contact" => "contact#create", via: :post
+   # '/contact' => 'contact#new'
+  # get '/create' => 'contact#create'
 end
