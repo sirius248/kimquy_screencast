@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+Gemfile
+/config/database.yml
+Gemfile.lock
+Rakefile

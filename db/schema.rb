@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130928101816) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
     t.string   "username"

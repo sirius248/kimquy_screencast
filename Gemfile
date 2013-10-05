@@ -14,15 +14,18 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'awesome_print'
 gem 'devise'
-gem 'puma'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                                 :github => 'anjlab/bootstrap-rails'
-
-
+gem "libv8"
+gem 'therubyracer'
 gem 'mail_form'
+gem 'execjs'
 
 group :development do
-	gem 'pry'
+  gem 'pry'
+  gem 'thin'
+  gem "better_errors"
+  gem "rack-mini-profiler"
 end
 
 group :doc do
