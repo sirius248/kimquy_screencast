@@ -25,6 +25,7 @@ group :development do
   gem 'pry'
   gem 'thin'
   gem "better_errors"
+  gem "binding_of_caller"
   gem "rack-mini-profiler"
 end
 
