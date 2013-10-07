@@ -20,6 +20,7 @@ gem "libv8"
 gem 'therubyracer'
 gem 'mail_form'
 gem 'execjs'
+gem 'simple_form'
 
 group :development do
   gem 'pry'
