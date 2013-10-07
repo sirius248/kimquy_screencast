@@ -6,7 +6,7 @@ KimquyScreencast::Application.routes.draw do
   get "/library" => "main#library"
 
   resources :contacts, :only => [:new, :create] do
-    get 'thank_you', :on => :collection
+    get 'done', :on => :collection
   end
 
   get "/contacts" => "contacts#new"

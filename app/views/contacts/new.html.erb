@@ -1,24 +1,38 @@
+<h3>Dong gop y kien</h3>
+<br />
+
+<div class="row">
+  <div class="span6 offset3">
+
 <%= form_for @contact do |f| %>
-  <% if @contact.errors.any? %>
-    <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% if @contact.errors.any? %>
+        <ul>
+          <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
-  <div>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
+
+      <div>
+        <%= f.label :name %>
+       <%= f.text_field :name , class: "form-control", placeholder: "Input name", style: "width: 400px;"%>
+     </div>
+
+      <div>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control", placeholder: "Input email", style: "width: 400px;" %>
+      </div>
+
+      <div>
+        <%= f.label :message %>
+        <%= f.text_area :message, class: "form-control", rows: "3", style: "width: 400px; height: 350px;"%>
+      </div>
+
+      <div>
+        <%= f.submit "Gui", class: "btn btn-lg btn-primary" %>
+      </div>
+
+    <% end %>
+
   </div>
-  <div>
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </div>
-  <div>
-    <%= f.label :message %><br/>
-    <%= f.text_area :message %>
-  </div>
-  <div>
-    <%= f.submit "Send" %>
-  </div>
-<% end %>
+</div>

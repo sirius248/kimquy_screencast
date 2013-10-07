@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
 
     if @contact.deliver
-      render :thank_you
+      render :done
     else
       render :new
     end
