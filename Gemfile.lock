@@ -113,10 +113,14 @@ GEM
     polyglot (0.3.3)
     pony (1.5.1)
       mail (>= 2.0)
+    posix-spawn (0.3.6)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pygments.rb (0.5.2)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -145,6 +149,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.2.2)
     ref (1.0.5)
     sass (3.2.10)
     sass-rails (4.0.0)
@@ -187,6 +192,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
       rack (>= 1.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -196,6 +202,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  coderay
   coffee-rails (~> 4.0.0)
   devise
   execjs
@@ -209,9 +216,11 @@ DEPENDENCIES
   pg
   pony
   pry
+  pygments.rb
   rack-livereload
   rack-mini-profiler
   rails (= 4.0.0)
+  redcarpet
   sass-rails (~> 4.0.0)
   sdoc
   simple_form

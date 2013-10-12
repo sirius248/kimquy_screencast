@@ -22,6 +22,11 @@ gem 'mail_form'
 gem 'execjs'
 gem 'simple_form'
 gem 'pony'
+
+gem 'coderay'
+gem 'pygments.rb'
+gem 'redcarpet'
+
 group :development do
   gem 'pry'
   gem 'thin'

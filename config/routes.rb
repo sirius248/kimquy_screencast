@@ -1,4 +1,5 @@
 KimquyScreencast::Application.routes.draw do
+  get "video/show"
   devise_for :users
   root :to => "main#index"
   get "/team" => "main#team"
