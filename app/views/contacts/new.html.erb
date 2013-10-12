@@ -1,4 +1,4 @@
-<h3>Dong gop y kien</h3>
+<h3>Đóng góp ý kiến</h3>
 <br />
 
 <div class="row">
@@ -14,22 +14,22 @@
       <% end %>
 
       <div>
-        <%= f.label :name %>
-       <%= f.text_field :name , class: "form-control", placeholder: "Input name", style: "width: 400px;"%>
+        <%= f.label :Tên %>
+       <%= f.text_field :name , class: "form-control", placeholder: "tên của ", style: "width: 400px;"%>
      </div>
 
       <div>
         <%= f.label :email %>
-        <%= f.text_field :email, class: "form-control", placeholder: "Input email", style: "width: 400px;" %>
+        <%= f.text_field :email, class: "form-control", placeholder: "email của bạn", style: "width: 400px;" %>
       </div>
 
       <div>
-        <%= f.label :message %>
-        <%= f.text_area :message, class: "form-control", rows: "3", style: "width: 400px; height: 350px;"%>
+        <%= f.label "Nội dung" %>
+        <%= f.text_area :message, class: "form-control", rows: "3", style: "width: 400px; height: 350px;"%><br/>
       </div>
 
       <div>
-        <%= f.submit "Gui", class: "btn btn-lg btn-primary" %>
+        <%= f.submit "Gửi", class: "btn btn-lg btn-primary" %>
       </div>
 
     <% end %>
