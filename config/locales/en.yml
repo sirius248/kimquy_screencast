@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  error:
+    contact:
+      name: "Tên của bạn không nên bỏ trống"
+      email: "Email của bạn sai định dạng, vui lòng nhập lại"
+      message: "Nội dung bạn nhập vào quá ngắn"
