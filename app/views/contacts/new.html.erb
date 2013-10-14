@@ -27,7 +27,7 @@
 
       <div>
         <%= f.label "Nội dung" %>
-        <%= f.text_area :message, class: @my_errors.include?(:message) ? "form-control error" : "form-control", rows: "3", style: "width: 400px; height: 350px;"%>
+        <%= f.text_area :message, class: @my_errors.include?(:message) ? "form-control error" : "form-control", rows: "3", style: "width: 400px; height: 200px;"%>
 
          <% if @my_errors.include?(:message) %>
             <p class="show-error"><%= @contact.errors.messages[:message][0] %></p>
