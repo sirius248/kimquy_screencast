@@ -17,10 +17,21 @@
   <br/>
 
   <%= render 'main/slogan' %>
+<<<<<<< HEAD
+
   <%= render 'main/content' %>
 
   <%= render 'main/footer' %>
 
+
+=======
+
+  <%= render 'main/content' %>
+
+  <%= render 'main/footer' %>
+  
+  
+>>>>>>> 32823e07ac0bc3215057b9b31e32806747933839
 </body>
 </html>
 

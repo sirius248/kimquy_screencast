@@ -20,12 +20,24 @@ gem "libv8"
 gem 'therubyracer'
 gem 'mail_form'
 gem 'execjs'
+gem 'simple_form'
+gem 'pony'
+
+gem 'coderay'
+gem 'pygments.rb'
+gem 'redcarpet'
 
 group :development do
   gem 'pry'
   gem 'thin'
   gem "better_errors"
+  gem "binding_of_caller"
   gem "rack-mini-profiler"
+
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+  gem 'guard-bundler'
 end
 
 group :doc do
