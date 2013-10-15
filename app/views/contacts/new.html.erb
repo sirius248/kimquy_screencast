@@ -1,9 +1,10 @@
-<h3>Đóng góp ý kiến</h3>
+
+
+<div class="row" >
+
+  <div class="col-lg-6" id='donggop'>
+     <h3>Đóng góp ý kiến</h3>
 <br />
-
-<div class="row">
-  <div class="span6 offset3">
-
 <%= form_for @contact do |f| %>
       <% @my_errors = @contact.errors.entries.map { |e| e[0]} %>
 
@@ -54,7 +55,28 @@
 .show-error{
   color: #FF0000;
 }
+
+#donggop{
+  background: #eee url(/assets/pattern.png);
+}
 </style>
+
+<% if request.path == '/contacts'  %>
+  <style type="text/css">
+    body{
+      background: #bfc8c7 url(/assets/team-body.jpg);
+      background-attachment: fixed;
+    }
+    #footer{
+      background-color: transparent;
+      border: 0;
+    }
+    #donggop{
+      padding-bottom: 16px;
+      border-radius: 8px;
+    }
+  </style>
+<% end %>
 
 
 <script type="text/javascript">
