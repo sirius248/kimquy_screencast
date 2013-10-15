@@ -1,4 +1,6 @@
 KimquyScreencast::Application.routes.draw do
+  resources :clips
+
   get "video/show"
   devise_for :users
   root :to => "main#index"

@@ -1,11 +1,12 @@
+<div id='top'></div>
 <br/>
 <div class="video-title">Basic Ubuntu</div>
 <div class="detail">Jun 16, 2013 | 11 minutes | Long Nguyen</div> 
 <br/>
 
-<div class='row row-offcanvas row-offcanvas-right'>
+<div class='row'>
 	<div id="video-portion" class="col-lg-8">
-		<video id="a240e92d" class="sublime" poster="https://cdn.sublimevideo.net/vpa/ms_800.jpg" width="740" height="400" title="Midnight Sun" data-uid="a240e92d" preload="none">
+		<video id="a240e92d" class="sublime" poster="https://cdn.sublimevideo.net/vpa/ms_800.jpg" width="760" height="400" title="Midnight Sun" data-uid="a240e92d" preload="none">
 		  <source src="https://cdn.sublimevideo.net/vpa/ms_360p.mp4" />
 		  <source src="https://cdn.sublimevideo.net/vpa/ms_720p.mp4" data-quality="hd" />
 		  <source src="https://cdn.sublimevideo.net/vpa/ms_360p.webm" />
@@ -14,26 +15,88 @@
 	</div>
 
 	<div id="similar-episodes" class="col-lg-3">
-		<p><b><u>Similar episodes</u> </b> </p>
+		<span id="similar_episode_title">
+			Các Tút liên quan
+		</span>
+
+		<div class="list-group">
+		  <a href="#" class="list-group-item">
+		    <h5 class="list-group-item-heading">Giới thiệu Postgresql</h5>
+		    <p class="list-group-item-text">
+		    	...
+		    </p>
+		  </a>
+
+		  <a href="#" class="list-group-item">
+		    <h5 class="list-group-item-heading">Nginx & Unicorn</h5>
+		    <p class="list-group-item-text">
+		    	...
+		    </p>
+		  </a>
+
+		  <a href="#" class="list-group-item">
+		    <h5 class="list-group-item-heading">Ruby on Rails nâng cao</h5>
+		    <p class="list-group-item-text">
+		    	...
+		    </p>
+		  </a>
+
+		</div>
+
 	</div>
 </div>
 
-<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-lg-8">
 	<hr/>
 </div>
 
-<div class="col-lg-11">
-	<%= raw Pygments.highlight(@code, lexer: "ruby") %>
+<div class="col-lg-3">
+	<hr/>
 </div>
+
+	<div class="col-lg-8" id='note'>
+		<span id="note-title">
+			Những điểm quan trọng của Tut này
+		</span>
+
+		<div id='note-content'>
+			<%= markdown @code %>
+		</div>
+		
+	</div>
+
+	<div class='col-lg-3' id='video_menu_sidebar'>
+		<ul class="nav nav-stacked">
+		  <li><a href="#top"><span class="glyphicon glyphicon-bookmark"></span>&nbsp;Các Tút liên quan</a></li>
+		  <li><a href="#note"><span class="glyphicon glyphicon-book"></span>&nbsp;Những điểm quan trọng của Tut này</a></li>
+		  <li><a href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;Bình luận</a></li>
+		</ul>
+	</div>
 
 <script type="text/javascript" src="//cdn.sublimevideo.net/js/y7t04ffg.js"></script>
 
 <style type="text/css">
 	
 	#similar-episodes{
-		border: 1px solid gray;
+		padding: 0px;
+		border: 1px solid #CACACA;
 		height: 400px;
+		width: 292px;
+		border-radius: 3px;
+	}
 
+	#similar_episode_title{
+		font-size: 15px;
+		background-color: #eaeaea;
+		line-height: 38px;
+		font-weight: bold;
+		color: #555;
+		text-shadow: 0 1px 0 #fff;
+		border-bottom: 1px solid #CACACA;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 82px;
+		padding-right: 82px;
 	}
 
 	.video-title{
@@ -44,5 +107,38 @@
 	.detail{
 		color: #7B7777;
 		font-size: 12px;
+	}
+
+	#note{
+		padding: 0px;
+		border-radius: 3px;
+		border: 1px solid #CACACA;
+	}
+
+	#note-title{
+		font-size: 18px;
+		line-height: 20px;
+		font-weight: bold;
+		padding: 10px 10px;
+		color: #555;
+		text-shadow: 0 1px 0 #fff;
+		display: block;
+		background-color: #eaeaea;
+		border-bottom: 1px solid #CACACA;
+		background-image: linear-gradient(#fafafa, #eaeaea);
+		background-repeat: repeat-x;
+	}
+
+	#note-content{
+		margin-left: 4px;
+		margin-right: 4px;
+		padding: 20px;
+		font: 15px Helvetica, arial, freesans, clean, sans-serif;
+		line-height: 1.4;
+	}
+
+	#video_menu_sidebar{
+		margin-left: 6px;
+		height: 300px;
 	}
 </style>
