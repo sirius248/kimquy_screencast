@@ -1,45 +1,67 @@
 <br />
-<div class="col-md-5 col-md-offset-3 panel">
-  <%= form_for(@gik_user, class: "form-horizontal") do |gik_user| %>
-    <fieldset>
-      <legend>Đăng ký tài khoản Giktuts</legend>
 
-      <div class="control-group">
-        <%= gik_user.label "Tên của bạn", class: "control-label" %>
-        <div class="controls">
-          <%= gik_user.text_field :name, class: "input-xlarge", placeholder: "Điền tên của bạn" %>
-          <p class="help-block"><%= @gik_user.errors.messages[:name][0] unless @gik_user.errors.messages[:name].blank? %></p>
-        </div>
+<% provide(:title, "Đăng ký") %>
+<legend>Đăng ký tài khoản</legend>
+<div class: "row">
+  <div class: "span6 offset3">
+    <%= form_for @gik_user do |gik_user| %>
+
+     <% @my_errors = @gik_user.errors.entries.map { |e| e[0]} %>
+     <div>
+       <%= gik_user.label "Tên của bạn" %>
+       <%= gik_user.text_field :name , class: @my_errors.include?(:name) ? "form-control error" : "form-control", placeholder: "Điền tên của bạn", style: "width: 400px;"%>
+       <% if @my_errors.include?(:name) %>
+         <p class="show-error"><%= @gik_user.errors.messages[:name][0] %></p>
+       <% end %>
+     </div>
+
+     <div>
+       <%= gik_user.label "Email của bạn" %>
+       <%= gik_user.text_field :email , class: @my_errors.include?(:email) ? "form-control error" : "form-control", placeholder: "Điền email của bạn", style: "width: 400px;"%>
+       <% if @my_errors.include?(:email) %>
+         <p class="show-error"><%= @gik_user.errors.messages[:email][0] %></p>
+       <% end %>
+     </div>
+
+      <div>
+       <%= gik_user.label "Mật khẩu của bạn" %>
+       <%= gik_user.text_field :password , class: @my_errors.include?(:password) ? "form-control error" : "form-control", placeholder: "Điền mật khẩu của bạn", style: "width: 400px;"%>
+       <% if @my_errors.include?(:password) %>
+         <p class="show-error"><%= @gik_user.errors.messages[:password][0] %></p>
+       <% end %>
       </div>
 
-      <div class="control-group">
-        <%= gik_user.label "Email của bạn", class: "control-label" %>
-        <div class="controls">
-          <%= gik_user.text_field :email, class: "input-xlarge", placeholder: "Điền email của bạn" %>
-          <p class="help-block"><%= @gik_user.errors.messages[:email][0] unless @gik_user.errors.messages[:email].blank? %></p>
-        </div>
+      <div>
+       <%= gik_user.label "Gõ lại mật khẩu" %>
+       <%= gik_user.text_field :password_confirmation , class: @my_errors.include?(:password_confirmation) ? "form-control error" : "form-control", placeholder: "Gõ lại mật khẩu của bạn", style: "width: 400px;"%>
+       <% if @my_errors.include?(:password_confirmation) %>
+         <p class="show-error"><%= @gik_user.errors.messages[:password_confirmation][0] %></p>
+       <% end %>
       </div>
 
-      <div class="control-group">
-        <%= gik_user.label "Mật khẩu", class: "control-label" %>
-        <div class="controls">
-          <%= gik_user.password_field :password, class: "input-xlarge", placeholder: "Điền mật khẩu của bạn" %>
-          <p class="help-block"><%= @gik_user.errors.messages[:password][0] unless @gik_user.errors.messages[:password].blank? %></p>
-        </div>
+      <br />
+      <div>
+        <%= gik_user.submit "Tạo tài khoản", class: "btn btn-lg btn-primary"  %>
       </div>
 
-      <div class="control-group">
-        <%= gik_user.label "Gõ lại mật khẩu", class: "control-label" %>
-        <div class="controls">
-          <%= gik_user.password_field :password_confirmation, class: "input-xlarge", placeholder: "Điền mật khẩu của bạn" %>
-          <p class="help-block"><%= @gik_user.errors.messages[:password_confirmation][0] unless @gik_user.errors.messages[:password_confirmation].blank? %></p>
-        </div>
-      </div>
-
-      <div class="form-actions">
-        <%= gik_user.submit "Tạo tài khoản", class: "btn btn-large btn-primary" %>
-      </div>
-    </fieldset>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
+<style type="text/css">
+.error{
+  border: 2px solid #FF0000;
+}
+
+.show-error{
+  color: #FF0000;
+}
+</style>
+
+
+<script type="text/javascript">
+  $("#gik_user_name, #gik_user_email, #gik_user_password, #gik_user_password_confirmation").keydown(function(){
+    $(this).removeClass("error");
+    $(this).parent().parent().find(".show-error").hide();
+  });
+</script>
