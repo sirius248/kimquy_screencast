@@ -5,4 +5,13 @@ module ApplicationHelper
 
     end
 	end
+
+  def full_title(page_title)
+    base_title = "GikTuts"
+    if page_title.blank?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
+    end
+  end
 end
