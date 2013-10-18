@@ -8,7 +8,7 @@
         <%= gik_user.label "Tên của bạn", class: "control-label" %>
         <div class="controls">
           <%= gik_user.text_field :name, class: "input-xlarge", placeholder: "Điền tên của bạn" %>
-          <p class="help-block">Error</p>
+          <p class="help-block"><%= @gik_user.errors.messages[:name][0] unless @gik_user.errors.messages[:name].blank? %></p>
         </div>
       </div>
 
@@ -16,7 +16,7 @@
         <%= gik_user.label "Email của bạn", class: "control-label" %>
         <div class="controls">
           <%= gik_user.text_field :email, class: "input-xlarge", placeholder: "Điền email của bạn" %>
-          <p class="help-block">Error</p>
+          <p class="help-block"><%= @gik_user.errors.messages[:email][0] unless @gik_user.errors.messages[:email].blank? %></p>
         </div>
       </div>
 
@@ -24,7 +24,7 @@
         <%= gik_user.label "Mật khẩu", class: "control-label" %>
         <div class="controls">
           <%= gik_user.password_field :password, class: "input-xlarge", placeholder: "Điền mật khẩu của bạn" %>
-          <p class="help-block">Error</p>
+          <p class="help-block"><%= @gik_user.errors.messages[:password][0] unless @gik_user.errors.messages[:password].blank? %></p>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
         <%= gik_user.label "Gõ lại mật khẩu", class: "control-label" %>
         <div class="controls">
           <%= gik_user.password_field :password_confirmation, class: "input-xlarge", placeholder: "Điền mật khẩu của bạn" %>
-          <p class="help-block">Error</p>
+          <p class="help-block"><%= @gik_user.errors.messages[:password_confirmation][0] unless @gik_user.errors.messages[:password_confirmation].blank? %></p>
         </div>
       </div>
 
