@@ -8,6 +8,7 @@ class GikUsersController < ApplicationController
 
     if @gik_user.save
       # something to do
+      redirect_to root_path
     else
       render 'new'
     end
