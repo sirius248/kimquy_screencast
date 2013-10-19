@@ -1,7 +1,9 @@
 development:
+  host: localhost
   adapter: postgresql 
   database: kimquy_screencast_development 
-  user: "longn"
+  user: "postgres"
+  password: "root"
   pool: 5
   timeout: 5000
 
@@ -9,15 +11,19 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+  host: localhost
   adapter: postgresql 
   database: kimquy_screencast_test
-  user: "longn2013"
+  user: "postgres"
+  password: "root"
   pool: 5
   timeout: 5000
 
 production:
+  host: localhost
   adapter: postgresql 
   database: kimquy_screencast_production
-  user: "longn2013"
+  user: "postgres"
+  password: "root"
   pool: 5
   timeout: 5000
