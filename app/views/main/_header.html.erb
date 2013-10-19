@@ -1,29 +1,30 @@
+<% provide(:title, "Trang chu") %>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span>
           <span class="icon-bar"></span>
        </button>
         <a class="navbar-brand" href="/"><%= image_tag "mylogo.png", size: "100x32" %></a>
       </div>
-      
+
       <div class="navbar-collapse collapse" style="height: 1px;">
         <ul class="nav navbar-nav">
           <li><a href="/library">ThưViện Tuts</a></li>
           <li><a href="/team">Team</a></li>
-          <li><a href="/donggop">Đóng Góp</a></li>
+          <li><a href="/contacts">Đóng Góp</a></li>
         </ul>
 
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group" id="search_container">
-            <input type="text" class="form-control search_text" placeholder="Tìm video theo tên, hay theo tác giả">
+            <input type="text" class="form-control search_text" placeholder="Tìm video theo tên, tác giả, hoặc tag">
           </div>
         </form>
 
         <%= render 'layouts/login' %>
-        
+
       </div>
     </div>
   </div>

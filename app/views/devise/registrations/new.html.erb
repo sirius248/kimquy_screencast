@@ -4,16 +4,19 @@
 	<hr/>
 
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-	  <%= devise_error_messages! %>
-
+	  <% #devise_error_messages! %>
+	  <% @my_errors = resource.errors.messages %>
+	  
+	  <%= error(resource,email)%>
 	  <div><%= f.label :email %><br />
-	  <%= f.email_field :email, :autofocus => true, class: "form-control" %></div>
+	  <%= f.email_field :email, :autofocus => true, class: @my_errors.include?(:email) ? "form-control error" : "form-control", placeholder: "tên của bạn", style: "width: 400px;" %></div>
 
+	  <%= @my_errors[:password].html_safe unless @my_errors.blank?%>
 	  <div><%= f.label :password %><br />
-	  <%= f.password_field :password, class: "form-control" %></div>
+	  <%= f.password_field :password, class: @my_errors.include?(:password) ? "form-control error" : "form-control", placeholder: "password của bạn", style: "width: 400px;" %></div>
 
 	  <div><%= f.label :password_confirmation %><br />
-	  <%= f.password_field :password_confirmation, class: "form-control" %></div> <br/>
+	  <%= f.password_field :password_confirmation, class: "form-control", style: "width: 400px;" %></div> <br/>
 
 	  <div><%= f.submit "Đăng ký", class: "btn btn-lg btn-primary btn-block" %></div>
 	  <%= render "devise/shared/links" %>
@@ -22,3 +25,21 @@
 	
 
 </div>
+
+<style type="text/css">
+.error{
+  border: 2px solid #FF0000;
+}
+
+.show-error{
+  color: #FF0000;
+}
+</style>
+
+
+<script type="text/javascript">
+  $("#resource_email, #resource_password").keydown(function(){
+    $(this).removeClass("error");
+    $(this).parent().parent().find(".show-error").hide();
+  });
+</script>

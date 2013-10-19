@@ -4,7 +4,7 @@ development:
   database: kimquy_screencast_development 
   user: "postgres"
   password: "root"
-  pool: 5
+ pool: 5
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -16,7 +16,7 @@ test:
   database: kimquy_screencast_test
   user: "postgres"
   password: "root"
-  pool: 5
+ pool: 5
   timeout: 5000
 
 production:
@@ -25,5 +25,5 @@ production:
   database: kimquy_screencast_production
   user: "postgres"
   password: "root"
-  pool: 5
+ pool: 5
   timeout: 5000
