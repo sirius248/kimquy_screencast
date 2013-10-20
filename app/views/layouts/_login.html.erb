@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav navbar-right">
-    <% if user_signed_in? %>
+    <% unless current_user.blank? %>
          <li><%= link_to current_user.email %></li>
-         <li><%= link_to "Thoát", destroy_user_session_path, method: :delete, id: "thoat_button" %></li>
+         <li><%= link_to "Thoát", signout_path, method: :delete, id: "thoat_button" %></li>
     <% else %>
-       <li><%= link_to "Đăng Ký", new_user_registration_path, id: "dangky_button" %> </li>
-         <li><%= link_to "Đăng Nhập", new_user_session_path %></li>
+       <li><%= link_to "Đăng Ký", signup_path, id: "dangky_button" %> </li>
+         <li><%= link_to "Đăng Nhập", signin_path %></li>
     <% end %>
 </ul>

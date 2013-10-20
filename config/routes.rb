@@ -1,11 +1,6 @@
 KimquyScreencast::Application.routes.draw do
   match "/signup", to: "gik_users#new", via: 'get'
   resources :gik_users
-  # get "giktuts_users/create"
-  # get "giktuts_users/confirm"
-  # get "giktuts_users/edit"
-  match "/signin", to: "sessions#new", via: 'get'
-  match "/signout", to: "sessions#destroy", via: 'delete'
   resources :sessions, only: [:new, :create, :destroy, :current_user]
   get "video/show"
   devise_for :users
@@ -18,5 +13,7 @@ KimquyScreencast::Application.routes.draw do
     get 'done', :on => :collection
   end
 
+  match "/signin", to: "gik_users#signin", via: [:post, :get]
+  match "/signout", to: "gik_users#signout", via: [:post, :get, :delete]
   get "/contacts" => "contacts#new"
 end
