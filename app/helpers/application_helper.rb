@@ -14,4 +14,20 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def sign_in(gik_user)
+    self.current_user = gik_user
+  end
+
+  def current_user
+    session[:gik_user]
+  end
+
+  def create_session(gik_user)
+    session[:gik_user] = gik_user
+  end
+
+  def destroy_session
+    session.delete(:gik_user)
+  end
 end
