@@ -1,0 +1,25 @@
+<% provide(:title, "Đăng nhập") %>
+
+<br />
+<legend>Đăng nhập vào tài khoản gikTuts</legend>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag({controller: 'gik_users', action: 'signin'}, method: "post") do %>
+      <%= label :gik_user, :email %>
+      <%= text_field_tag "gik_user[email]" %>
+
+      <br />
+
+      <%= label :gik_user, :password %>
+      <%= password_field_tag "gik_user[password]" %>
+
+      <br />
+
+      <%= submit_tag "Đăng nhập", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p>Bạn chưa có tài khoản gikTuts, đăng ký ngay!<%= link_to "Đăng ký", signup_path %></p>
+  </div>
+</div>
+
