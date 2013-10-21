@@ -3,6 +3,8 @@
 <br />
 <legend>Đăng nhập vào tài khoản gikTuts</legend>
 
+
+
 <div class="row">
   <div class="span6 offset3">
     <%= form_tag({controller: 'gik_users', action: 'signin'}, method: "post") do %>
@@ -20,6 +22,7 @@
     <% end %>
 
     <p>Bạn chưa có tài khoản gikTuts, đăng ký ngay!<%= link_to "Đăng ký", signup_path %></p>
+    <p><%= link_to "Phục hồi mật khẩu", reminder_path%></p>
   </div>
 </div>
 

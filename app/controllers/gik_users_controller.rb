@@ -25,7 +25,6 @@ class GikUsersController < ApplicationController
 
     if gik_user && gik_user.authenticate(params[:gik_user][:password])
       create_session(gik_user)
-      # binding.pry
       redirect_to root_path
     else
       render 'signin'
