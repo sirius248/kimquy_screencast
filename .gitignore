@@ -21,3 +21,4 @@ Rakefile
 config/database.yml
 database.yml
 echo "database.yml" >> .gitignore
+config/newrelic.yml
