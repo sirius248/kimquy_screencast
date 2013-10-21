@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 1.2'
 
 
 
-
+gem 'newrelic_rpm'
 gem 'awesome_print'
 gem 'devise'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
