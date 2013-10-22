@@ -18,5 +18,6 @@ KimquyScreencast::Application.routes.draw do
   get "/contacts" => "contacts#new"
 
   match "/reminder", to: "reminders#reminder_done", via: [:post, :get]
-  match "/resetpassword", to: "reminders#compare", via: [:post, :get]
+  match "/resetpassword", to: "reminders#reset_pass", via: [:post, :get]
+  match "/resetpassword1", to: "reminders#compare", via: [:post, :get]
 end

@@ -1,4 +1,5 @@
 class RemindersController < ApplicationController
+  $count = 0
   def reminder_done
     return render 'reminder_done' if request.params["current_user"].blank?
     request_email = request.params['current_user']['email']
@@ -14,21 +15,24 @@ class RemindersController < ApplicationController
   end
 
   def compare
-    return render reminder_path if params.blank?
-    email = params[:email]
-    token = params[:token]
-    time_now = Time.zone.now
-    user_reset_pass = GikUser.where(email: email).first
+    return render resetpassword_path if params[:token].blank?
+    redirect_to resetpassword_url
+  end
 
-    unless user_reset_pass.blank?
-      if user_reset_pass.created_at > 24.hours.ago && user_reset_pass.reset_password_token == token
-        redirect_to root_path
-      else
-        user_reset_pass.update_column(:reset_password_token, '')
-        redirect_to reminder_url, notice: "Mật khẩu đã quá hạn 24 giờ, vui lòng phục hồi lại"
-      end
-    else
-      redirect_to reminder_url
-    end
+  def reset_pass
+    time_now = Time.zone.now
+    # redirect_to resetpassword_url if params[:gik_user].blank?
+  #   user_reset_pass = GikUser.where(email: email).first
+
+  #   unless user_reset_pass.blank?
+  #     if user_reset_pass.created_at > 24.hours.ago && user_reset_pass.reset_password_token == token
+  #       redirect_to root_path
+  #     else
+  #       user_reset_pass.update_column(:reset_password_token, '')
+  #       redirect_to reminder_url, notice: "Mật khẩu đã quá hạn 24 giờ, vui lòng phục hồi lại"
+  #     end
+  #   else
+  #     redirect_to reminder_url
+  #   end
   end
 end
