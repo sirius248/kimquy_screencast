@@ -1,0 +1,16 @@
+<% provide(:title, "Phục hồi mật khẩu") %>
+
+<br />
+
+
+<legend>Khôi phục mật khẩu</legend>
+
+
+<p>Điền email của bạn muốn khôi phục mật khẩu</p>
+<br />
+
+<%= form_tag reminder_path do%>
+  <%= label :current_user, :email %>
+  <%= text_field :current_user, :email %>
+  <%= submit_tag "Gửi" %>
+<% end %>

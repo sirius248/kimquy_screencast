@@ -1,0 +1,15 @@
+<% provide(:title, "Nhập mật khẩu mới") %>
+
+<br />
+<legend>Nhập mật khẩu mới</legend>
+
+<%= form_tag resetpassword_path do%>
+  <%= label :gik_user, "Nhập mật khẩu mới" %>
+  <%= password_field :gik_user, :password %>
+
+  <br />
+  <%= label :gik_user, "Nhập lại mật khẩu mới" %>
+  <%= password_field :gik_user, :password_confirmation %>
+<br />
+  <%= submit_tag "Gửi" %>
+<% end %>

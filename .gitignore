@@ -14,3 +14,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+Gemfile
+/config/database.yml
+Gemfile.lock
+Rakefile
+config/database.yml
+database.yml
+echo "database.yml" >> .gitignore
+config/newrelic.yml

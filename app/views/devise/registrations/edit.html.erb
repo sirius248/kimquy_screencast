@@ -26,4 +26,23 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %
+
+<style type="text/css">
+  .error{
+    border: 2px solid #FF0000;
+  }
+
+  .show-error{
+    color: #FF0000;
+  }
+</style>
+
+
+
+<script type="text/javascript">
+  $("#contact_name, #contact_email, #contact_message").keydown(function(){
+    $(this).removeClass("error");
+    $(this).parent().parent().find(".show-error").hide();
+  });
+</script>

@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928101816) do
+ActiveRecord::Schema.define(version: 20131021122100) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "gik_users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
+    t.string   "password_reset_token"
+  end
+
+  add_index "gik_users", ["email"], name: "index_gik_users_on_email", unique: true, using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"

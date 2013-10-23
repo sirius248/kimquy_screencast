@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GikTuts</title>
+<title><%= full_title(yield(:title)) %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= render 'header' %>
-
+  <%= render 'main/header' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
   <br/>
   <br/>
   <br/>
 
-  <%= render 'slogan' %>
+  <%= render 'main/slogan' %>
+  <%= render 'main/content' %>
 
-  <%= render 'content' %>
-
-  <%= render 'footer' %>
-  
-  
+  <%= render 'main/footer' %>
+  <%= debug(params.inspect) if Rails.env == "development" %>
 </body>
 </html>
 

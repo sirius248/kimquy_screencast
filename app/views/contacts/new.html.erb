@@ -1,0 +1,66 @@
+<% provide(:title, "Đóng góp ý kiến") %>
+<h3>Đóng góp ý kiến</h3>
+<br />
+
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_for @contact do |f| %>
+      <% @my_errors = @contact.errors.entries.map { |e| e[0]} %>
+
+      <div>
+        <%= f.label :Tên %>
+       <%= f.text_field :name , class: @my_errors.include?(:name) ? "form-control error" : "form-control", placeholder: "tên của bạn", style: "width: 400px;"%>
+
+          <% if @my_errors.include?(:name) %>
+            <p class="show-error"><%= @contact.errors.messages[:name][0] %></p>
+          <% end %>
+     </div>
+
+      <div>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: @my_errors.include?(:email) ? "form-control error" : "form-control", placeholder: "email của bạn", style: "width: 400px;" %>
+
+         <% if @my_errors.include?(:email) %>
+            <p class="show-error"><%= @contact.errors.messages[:email][0] %></p>
+          <% end %>
+      </div>
+
+      <div>
+        <%= f.label "Nội dung" %>
+        <%= f.text_area :message, class: @my_errors.include?(:message) ? "form-control error" : "form-control", rows: "3", style: "width: 400px; height: 350px;"%>
+
+         <% if @my_errors.include?(:message) %>
+            <p class="show-error"><%= @contact.errors.messages[:message][0] %></p>
+          <% end %>
+      </div>
+
+      <br/>
+
+      <div>
+        <%= f.submit "Gửi", class: "btn btn-lg btn-primary" %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+
+
+<style type="text/css">
+.error{
+  border: 2px solid #FF0000;
+}
+
+.show-error{
+  color: #FF0000;
+}
+</style>
+
+
+<script type="text/javascript">
+  $("#contact_name, #contact_email, #contact_message").keydown(function(){
+    $(this).removeClass("error");
+    $(this).parent().parent().find(".show-error").hide();
+  });
+</script>

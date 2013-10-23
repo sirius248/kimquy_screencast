@@ -3,6 +3,7 @@ development:
   encoding: utf8
   database: kimquy_screencast_development
   username: "root"
+  host: localhost
   password: "root"
   pool: 5
   timeout: 5000
@@ -15,6 +16,7 @@ test:
   encoding: utf8
   database: kimquy_screencast_test
   username: "root"
+  host: localhost
   password: "root"
   pool: 5
   timeout: 5000
@@ -24,6 +26,7 @@ production:
   encoding: utf8
   database: kimquy_screencast_production
   username: "root"
+  host: localhost
   password: "root"
   pool: 5
   timeout: 5000
