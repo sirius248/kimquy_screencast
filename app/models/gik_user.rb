@@ -13,11 +13,11 @@ class GikUser < ActiveRecord::Base
 
   def send_token
     new_token = SecureRandom.urlsafe_base64
-    self.password_reset_token = new_token
-    self.created_at = Time.zone.now
+    # self.password_reset_token = new_token
+    # self.created_at = Time.zone.now
 
     begin
-      save!
+      self.update_columns(password_reset_token: new_token, created_at: Time.zone.now)
     rescue Exception => e
     end
     UserMailer.reminder(self).deliver
