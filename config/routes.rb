@@ -1,4 +1,5 @@
 KimquyScreencast::Application.routes.draw do
+  get "admins/dashboard"
   get "reminders/reminder_done"
   match "/signup", to: "gik_users#new", via: 'get'
   resources :gik_users
@@ -18,6 +19,6 @@ KimquyScreencast::Application.routes.draw do
   get "/contacts" => "contacts#new"
 
   match "/reminder", to: "reminders#reminder_done", via: [:post, :get]
-  # match "/resetpassword", to: "reminders#reset_pass", via: [:post, :get]
   match "/resetpassword", to: "reminders#compare", via: [:post, :get]
+  match "/gikadmin", to: "admins#dashboard", via: [:get, :post]
 end
