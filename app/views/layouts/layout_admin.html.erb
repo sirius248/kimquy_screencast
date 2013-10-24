@@ -1,3 +1,4 @@
+<%# <%= return render 'main/index' if current_user.blank? %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,10 +35,28 @@
       $('.column').equalHeight();
     });
   </script>
+
+
+  <!--Show clocl analog-->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#analog-clock').clock({offset: '+5', type: 'analog'});
+    });
+  </script>
 </head>
 
 <body>
-  <%= render 'admin_layout/header' %>
+<%= render 'admin_layout/header' %>
+
+<div style="text-align: center;">
+   <ul id="analog-clock" class="analog">
+     <li class="hour"></li>
+     <li class="min"></li>
+     <li class="sec"></li>
+     <li class="meridiem"></li>
+   </ul>
+ </div>
+
     <section id="main" class="column">
     <h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
     <article class="module width_full">
