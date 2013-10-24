@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  include 'layout_admin'
+  layout 'layout_admin'
   def dashboard
   end
 end
