@@ -46,11 +46,12 @@
 </head>
 
 <body>
-<%= render 'admin_layout/header' %>
-<%= render 'admin_layout/analog' %>
+<% unless current_user.blank? %>
+  <%= render 'admin_layout/header' %>
+  <%= render 'admin_layout/analog' %>
     <section id="main" class="column">
-    <h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
-    <article class="module width_full">
+      <h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
+      <article class="module width_full">
       <header><h3>Stats</h3></header>
       <div class="module_content">
         <article class="stats_graph">
@@ -282,6 +283,9 @@
 		</article><!-- end of styles article -->
 		<div class="spacer"></div>
 	</section>
+<% else %>
+   <h1>Error</h1>
+<% end %>
 </body>
 </html>
 
