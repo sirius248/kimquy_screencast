@@ -47,8 +47,9 @@
 
 <body>
 <% unless current_user.blank? %>
-  <%= render 'admin_layout/header' %>
-  <%= render 'admin_layout/analog' %>
+  <% unless current_user.is_admin.blank? %>
+    <%= render 'admin_layout/header' %>
+    <%= render 'admin_layout/analog' %>
     <section id="main" class="column">
       <h4 class="alert_info">Welcome to the free MediaLoot admin panel template, this could be an informative message.</h4>
       <article class="module width_full">
@@ -283,6 +284,7 @@
 		</article><!-- end of styles article -->
 		<div class="spacer"></div>
 	</section>
+<% end %>
 <% else %>
    <h1>Error</h1>
 <% end %>
