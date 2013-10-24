@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021122100) do
+ActiveRecord::Schema.define(version: 20131024081538) do
 
   create_table "gik_users", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131021122100) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "password_reset_token"
+    t.integer  "is_admin"
   end
 
   add_index "gik_users", ["email"], name: "index_gik_users_on_email", unique: true, using: :btree

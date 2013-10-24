@@ -1,9 +1,13 @@
 <ul class="nav navbar-nav navbar-right">
-    <% unless current_user.blank? %>
-         <li><%= link_to current_user.name %></li>
-         <li><%= link_to "Thoát", signout_path, method: :delete, id: "thoat_button" %></li>
+    <% if !current_user.blank? && current_user.is_admin.blank? %>
+      <li><%= link_to current_user.name %></li>
+      <li><%= link_to "Thoát", signout_path, method: :delete, id: "thoat_button" %></li>
+    <% elsif !current_user.blank? && !current_user.is_admin.blank? %>
+      <li><%= link_to "Xin chào " + current_user.name %></li>
+      <li><%= link_to "Trang admin", gikadmin_path %></li>
+      <li><%= link_to "Thoát", signout_path, method: :delete, id: "thoat_button" %></li>
     <% else %>
-       <li><%= link_to "Đăng Ký", signup_path, id: "dangky_button" %> </li>
-         <li><%= link_to "Đăng Nhập", signin_path %></li>
+      <li><%= link_to "Đăng Ký", signup_path, id: "dangky_button" %> </li>
+      <li><%= link_to "Đăng Nhập", signin_path %></li>
     <% end %>
 </ul>
