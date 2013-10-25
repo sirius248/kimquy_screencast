@@ -50,9 +50,11 @@
       <%= render 'admin_layout/header' %>
       <%= render 'admin_layout/analog' %>
         <%= yield %>
+    <% else %>
+      <%= render 'admin_layout/error'%>
     <% end %>
   <% else %>
-    <h1>Error</h1>
+    <%= render 'admin_layout/error'%>
   <% end %>
 </body>
 </html>
