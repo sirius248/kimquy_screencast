@@ -21,4 +21,7 @@ KimquyScreencast::Application.routes.draw do
   match "/reminder", to: "reminders#reminder_done", via: [:post, :get]
   match "/resetpassword", to: "reminders#compare", via: [:post, :get]
   match "/gikadmin", to: "admins#dashboard", via: [:get, :post]
+  match '/gikadmin/index', to: "admins#index", via: [:get, :post]
+  match '/gikadmin/article', to: "admins#article", via: [:get, :post]
+  match '/gikadmin/content', to: "admins#content", via: [:get, :post]
 end
